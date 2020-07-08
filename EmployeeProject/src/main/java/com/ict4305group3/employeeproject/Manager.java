@@ -13,9 +13,14 @@ package com.ict4305group3.employeeproject;
  * @author Kevin Taylor
  */
 public class Manager extends Employee {
-
+    public Manager(String name, double salary)
+    {
+        super(name, salary); 
+        
+    }
     @Override
     public void raiseSalary(double byPercent){
-    
+        double raise = super.getSalary() * (byPercent + 1) / 100;
+        salary += raise;
     };
 };

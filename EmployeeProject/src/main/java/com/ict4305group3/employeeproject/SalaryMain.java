@@ -13,5 +13,15 @@ package com.ict4305group3.employeeproject;
  * @author Kevin Taylor
  */
 public class SalaryMain {
-    
+    public static void main(String[] args) {
+        Employee e = new Employee("John", 50000);
+        System.out.println(e.getSalary());
+        System.out.println(e.getName());
+        Manager m = new Manager ("Karen", 51000);
+        System.out.println(m.getName() + " , " + m.getSalary());
+        m.raiseSalary(5);
+        System.out.println(m.getSalary());
+        e.raiseSalary(3);
+        System.out.println(e.getSalary());
+    }
 }
