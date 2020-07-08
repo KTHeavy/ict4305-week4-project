@@ -18,6 +18,7 @@ public class Manager extends Employee {
         super(name, salary); 
         
     }
+    
     @Override
     public void raiseSalary(double byPercent){
         double raise = super.getSalary() * (byPercent + 1) / 100;
