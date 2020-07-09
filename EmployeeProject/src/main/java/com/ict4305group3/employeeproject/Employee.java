@@ -19,6 +19,8 @@ public class Employee {
 
     public Employee(String name, double salary)
     {
+        if (salary < 1)
+            throw new IllegalArgumentException("Salary cannot be less than $1");
         this.name = name;
         this.salary = salary;
     }
@@ -38,4 +40,7 @@ public class Employee {
         double raise = salary * byPercent / 100;
         salary += raise;
     };
+    
+       
+        
 };
