@@ -6,7 +6,7 @@
 package com.ict4305group3.employeeproject;
 
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
@@ -18,7 +18,7 @@ public class EmployeeTest {
     
     public EmployeeTest() {
         String expectedName = "Jessica";
-        String actualName = "employee.getName()";
+        String actualName = employee.getName();
         
         double expectedSalary = 55000;
         double actualSalary = employee.getSalary();
@@ -44,7 +44,7 @@ public class EmployeeTest {
      */
     @Test
     public void testGetSalary() {
-        String expectedSalary = "55000";
+        double expectedSalary = 55000;
         double actualSalary = employee.getSalary();
         
         assertEquals(expectedSalary, actualSalary);
