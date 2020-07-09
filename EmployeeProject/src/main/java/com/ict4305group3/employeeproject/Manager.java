@@ -15,8 +15,7 @@ package com.ict4305group3.employeeproject;
 public class Manager extends Employee {
     public Manager(String name, double salary)
     {
-        super(name, salary); 
-        
+        super(name, salary);       
     }
     
     @Override

@@ -23,5 +23,6 @@ public class SalaryMain {
         System.out.println(m.getSalary());
         e.raiseSalary(3);
         System.out.println(e.getSalary());
+   
     }
 }
