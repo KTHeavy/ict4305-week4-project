@@ -10,12 +10,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  *
- * @author ssobczyk
+ * @author Ivan Piesh
+ * @author Sara Sobczyk
+ * @author Dawn Touriac
+ * @author Kevin Taylor
  */
 public class EmployeeTest {
     
     Employee employee = new Employee("Jessica", 55000);
-    
+
     public EmployeeTest() {
         String expectedName = "Jessica";
         String actualName = employee.getName();
@@ -28,6 +31,32 @@ public class EmployeeTest {
         assertEquals(expectedSalary, actualSalary);
     }
 
+    /**
+     * Test of thrown exception for salary argument, of class Employee.
+     */
+    @Test
+    public void testSalaryIllegalArgumentException (){
+        try {
+            Employee employee = new Employee("Jessica", 0);
+        } catch (IllegalArgumentException e) {
+            String expectedError = "Salary cannot be less than or equal to 0";
+            assertEquals(expectedError, e.getMessage());
+        }
+    }
+    
+    /**
+     * Test of thrown exception for name argument, of class Employee.
+     */
+    @Test
+    public void testNameIllegalArgumentException (){
+        try {
+            Employee employee = new Employee("", 200000);
+        } catch (IllegalArgumentException e) {
+            String expectedError = "Name must have at least one letter";
+            assertEquals(expectedError, e.getMessage());
+        }
+    }
+    
     /**
      * Test of getName method, of class Employee.
      */
@@ -63,4 +92,5 @@ public class EmployeeTest {
         assertEquals(expectedRaisedSalary, actualRaisedSalary);
     }
     
+
 }

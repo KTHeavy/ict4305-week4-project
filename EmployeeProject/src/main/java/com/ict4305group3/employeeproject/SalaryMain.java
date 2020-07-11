@@ -15,14 +15,17 @@ package com.ict4305group3.employeeproject;
 public class SalaryMain {
     public static void main(String[] args) {
         Employee e = new Employee("John", 50000);
-        System.out.println(e.getSalary());
-        System.out.println(e.getName());
         Manager m = new Manager ("Karen", 51000);
-        System.out.println(m.getName() + " , " + m.getSalary());
+        
+        System.out.println("Salaries before rasie: ");
+        System.out.println("Employee: " + e.getName() + ", Salary: " + e.getSalary());
+        System.out.println("Manager: " + m.getName() + ", Salary: " + m.getSalary());
+        
         m.raiseSalary(5);
-        System.out.println(m.getSalary());
         e.raiseSalary(3);
-        System.out.println(e.getSalary());
-   
+        
+        System.out.println("\nSalaries after rasie: ");
+        System.out.println("Employee: " + e.getName() + ", Salary: " + e.getSalary());
+        System.out.println("Manager: " + m.getName() + ", Salary: " + m.getSalary());
     }
 }

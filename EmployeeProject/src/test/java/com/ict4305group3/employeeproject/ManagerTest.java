@@ -9,8 +9,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- *
- * @author ipiesh
+ * 
+ * @author Ivan Piesh
+ * @author Sara Sobczyk
+ * @author Dawn Touriac
+ * @author Kevin Taylor
  */
 public class ManagerTest {
     
@@ -35,6 +38,32 @@ public class ManagerTest {
         //Test getSalary() initial
         assertEquals(expectedSalary, actualSalary);
 
+    }
+    
+        /**
+     * Test of thrown exception for salary argument, of class Manager.
+     */
+    @Test
+    public void testSalaryIllegalArgumentException (){
+        try {
+            Manager manager = new Manager("Wendy", 0);
+        } catch (IllegalArgumentException e) {
+            String expectedError = "Salary cannot be less than or equal to 0";
+            assertEquals(expectedError, e.getMessage());
+        }
+    }
+    
+    /**
+     * Test of thrown exception for name argument, of class Manager.
+     */
+    @Test
+    public void testNameIllegalArgumentException (){
+        try {
+            Manager manager = new Manager("", 1);
+        } catch (IllegalArgumentException e) {
+            String expectedError = "Name must have at least one letter";
+            assertEquals(expectedError, e.getMessage());
+        }
     }
 
     /**
