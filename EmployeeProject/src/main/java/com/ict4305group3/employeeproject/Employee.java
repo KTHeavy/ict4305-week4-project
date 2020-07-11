@@ -19,8 +19,10 @@ public class Employee {
 
     public Employee(String name, double salary)
     {
-        if (salary < 1)
+        if (salary <= 0)
             throw new IllegalArgumentException("Salary cannot be less than $1");
+        if (name == "" || name == "  ")
+            throw new IllegalArgumentException("Name must have at least one letter");
         this.name = name;
         this.salary = salary;
     }
